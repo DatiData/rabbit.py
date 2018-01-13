@@ -9,13 +9,15 @@ start_time=time.time()
 
 
 for i in range(numSimulations):
-    print("Trial ", i+1)
-    w=rabbit.Warren()
+    if (i+1) % 100==0:
+        print("Trial ", i+1)
+    
+    w=rabbit.Warren()  # create a Rabbit Warren
 
     failed=False
     genCount=1
     rabbitCount=2
-    while rabbitCount<100000:
+    while rabbitCount<100000:    
         genCount+=1
         rabbitCount=w.nextGen()
         if rabbitCount==-1:   # failures
