@@ -5,7 +5,8 @@ class Rabbit:
 
     def __init__(self, gender=2):
         # we can't assume that the random number generator was seeded
-        random.seed()   # we'll just use the timer to seed the pseudo-random number generator
+        # random.seed()   # we'll just use the timer to seed the pseudo-random number generator 
+        # Note:  moved seeding to the Warren class
         # print ("Creating Rabbit")  #debug
         if gender not in (0,1):
             self.sex=random.randint(0,1)  # female 1, male 0
@@ -33,6 +34,7 @@ class Warren:
     """A class for working with lists of Rabbits"""
 
     def __init__(self):
+        random.seed()
         self.w=[]      # This is our list of Rabbits
         a=Rabbit(gender=0)  # All Warrens start with a male and female rabbit
         b=Rabbit(gender=1)
