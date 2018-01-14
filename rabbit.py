@@ -48,6 +48,8 @@ class Warren:
                 maleAlive=True
             if i.alive and i.sex==1:
                 femaleAlive=True
+            if maleAlive and femaleAlive:
+                break
         return (maleAlive and femaleAlive)
         
     def litter(self):
